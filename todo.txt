@@ -3,16 +3,16 @@
 • memcpy
 • memccpy
 • memmove
-• strlen
-• strdup
-• strcpy
-• strncpy
-• strcat
-• strncat
+#• strlen
+#• strdup
+#• strcpy
+#• strncpy
+#• strcat
+#• strncat
 • strlcat
-• strchr
-• strrchr
-• strstr
+#• strchr
+#• strrchr
+#• strstr
 • strnstr
 • strcmp
 • strncmp
@@ -40,17 +40,15 @@
 - ft_strjoin
 - ft_strtrim
 - ft_strsplit
-- ft_itoa
+#- ft_itoa
 #- ft_putchar
 #- ft_putstr
-#- ft_putendl
-#- ft_putnbr
-#- ft_putchar_fd
-#- ft_putstr_fd
-#- ft_putendl_fd
-#- ft_putnbr_fd
-
-//////////////////////////////////////////////////////////////////////////////
+- ft_putendl
+- ft_putnbr
+- ft_putchar_fd
+- ft_putstr_fd
+- ft_putendl_fd
+- ft_putnbr_fd
 
 Partie bonus :
 
