@@ -1,6 +1,8 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+#include <stddef.h>
+
 void	ft_putstr(char *str);
 char	*ft_itoa(int nbr);
 void	ft_putchar(char c);
@@ -12,7 +14,8 @@ char	**ft_strcpy(char **dest, char **src);
 char	*ft_strncat(char *dest, char *src, int nb);
 char 	*strstr(const char *haystack, const char *needle);
 char *strchr(const char *s, int c);
-char *strnstr(const char *haystack, const char *needle, size_t n)
-char *strstr(const char *haystack, const char *needle)
-
+char *strnstr(const char *haystack, const char *needle, size_t n);
+char *strstr(const char *haystack, const char *needle);
+int strcmp(const char *s1, const char *s2);
+int strncmp(const char *s1, const char *s2, size_t n);
 #endif 

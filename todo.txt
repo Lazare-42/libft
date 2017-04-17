@@ -1,7 +1,7 @@
-• memset
-• bzero
-• memcpy
-• memccpy
+#• memset
+#• bzero
+#• memcpy
+#• memccpy
 • memmove
 #• strlen
 #• strdup
@@ -13,10 +13,10 @@
 #• strchr
 #• strrchr
 #• strstr
-• strnstr
-• strcmp
-• strncmp
-• atoi
+#• strnstr
+#• strcmp
+#• strncmp
+#• atoi
 • isalpha
 • isdigit
 • isalnum

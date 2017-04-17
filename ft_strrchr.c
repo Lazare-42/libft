@@ -5,8 +5,8 @@ char *ft_strchr(const char *s, int c)
 	int i;
 	int j;
 
-	j = i;
 	i = 0;
+	j = i;
 	while (s[i])
 	{
 		if (s[i] == c)

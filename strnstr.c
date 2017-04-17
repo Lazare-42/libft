@@ -1,4 +1,5 @@
-#include <stdlib.h>
+#include "stdlib.h"
+#include <stddef.h>
 
 char *strnstr(const char *haystack, const char *needle, size_t n)
 {
