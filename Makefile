@@ -6,27 +6,24 @@
 #    By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/27 14:56:05 by lazrossi          #+#    #+#              #
-#    Updated: 2017/03/28 17:24:01 by lazrossi         ###   ########.fr        #
+#    Updated: 2017/04/18 10:50:33 by lazrossi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-DYN = libft.so
 SRC = *.c
+OBJECT = *.o
 
-INCLUDES = ./includes/
+all: $(NAME)
 
-all: 
-	gcc -c $(SRC) -I $(INClUDES) -Wall -Wextra -Werror
-	ar rc $(NAME) *.o
-so:
-	ar rs $(DYN) $(NAME)
+$(NAME):  
+	gcc -Wall -Wextra -Werror -c $(SRC)
+	ar rc $(NAME) $(OBJECT)
 
 clean: 
-	rm -rf *.o
+	/bin/rm -f $(OBJECT)
 
 fclean: clean
-	rm -rf libft.a
-	rm -rf libft.so
+	/bin/rm -f $(NAME)
 
 re: fclean all

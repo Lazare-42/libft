@@ -13,9 +13,10 @@ int		ft_strlen(char *str);
 char	**ft_strcpy(char **dest, char **src);
 char	*ft_strncat(char *dest, char *src, int nb);
 char 	*strstr(const char *haystack, const char *needle);
-char *strchr(const char *s, int c);
-char *strnstr(const char *haystack, const char *needle, size_t n);
-char *strstr(const char *haystack, const char *needle);
-int strcmp(const char *s1, const char *s2);
-int strncmp(const char *s1, const char *s2, size_t n);
+char *ft_strchr(const char *s, int c);
+char *ft_strrchr(const char *s, int c);
+char *ft_strnstr(const char *haystack, const char *needle, size_t n);
+char *ft_strstr(const char *haystack, const char *needle);
+int ft_strcmp(const char *s1, const char *s2);
+int ft_strncmp(const char *s1, const char *s2, size_t n);
 #endif 

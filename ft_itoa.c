@@ -1,7 +1,18 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/04/18 09:30:29 by lazrossi          #+#    #+#             */
+/*   Updated: 2017/04/18 10:13:50 by lazrossi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "stdlib.h"
 
-int	ft_size(int nbr)
+int		ft_size(int nbr)
 {
 	int size;
 
@@ -14,13 +25,12 @@ int	ft_size(int nbr)
 	return (size);
 }
 
-
-char *ft_itoa(int nbr)
+char	*ft_itoa(int nbr)
 {
-	char 			*str;
-	int 			size;
-	unsigned int 	tmp;
-	int 			sign;
+	char			*str;
+	int				size;
+	unsigned int	tmp;
+	int				sign;
 
 	sign = 0;
 	size = ft_size(nbr);
