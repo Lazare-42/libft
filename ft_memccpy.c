@@ -1,6 +1,6 @@
 #include "libft.h"
 
-void *memccpy(void *dest, const void *src, int c, size_t n)
+void *ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
 	unsigned char *dest_cpy;
 	const unsigned char *src_cpy;
@@ -15,7 +15,6 @@ void *memccpy(void *dest, const void *src, int c, size_t n)
 		i++;
 		n--;
 	}
-	i++;
 	if (src_cpy[i] == (unsigned char)c)
 	{
 		dest_cpy[i] = src_cpy[i];

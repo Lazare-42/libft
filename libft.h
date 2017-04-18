@@ -19,4 +19,6 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t n);
 char *ft_strstr(const char *haystack, const char *needle);
 int ft_strcmp(const char *s1, const char *s2);
 int ft_strncmp(const char *s1, const char *s2, size_t n);
+void *ft_memccpy(void *dest, const void *src, int c, size_t n);
+
 #endif 
