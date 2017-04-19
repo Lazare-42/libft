@@ -6,7 +6,7 @@
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/19 17:51:24 by lazrossi          #+#    #+#             */
-/*   Updated: 2017/04/19 17:52:40 by lazrossi         ###   ########.fr       */
+/*   Updated: 2017/04/19 19:00:24 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,5 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
+size_t	strlcat(char * restrict dst, const char * restrict src, size_t size);
 #endif
