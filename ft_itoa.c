@@ -6,13 +6,14 @@
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 09:30:29 by lazrossi          #+#    #+#             */
-/*   Updated: 2017/04/18 10:13:50 by lazrossi         ###   ########.fr       */
+/*   Updated: 2017/04/19 15:50:21 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stdlib.h"
+#include "libft.h"
 
-int		ft_size(int nbr)
+static int		ft_size(int nbr)
 {
 	int size;
 
@@ -25,7 +26,7 @@ int		ft_size(int nbr)
 	return (size);
 }
 
-char	*ft_itoa(int nbr)
+char			*ft_itoa(int nbr)
 {
 	char			*str;
 	int				size;
@@ -34,23 +35,22 @@ char	*ft_itoa(int nbr)
 
 	sign = 0;
 	size = ft_size(nbr);
-	if (nbr < 0)
+	if (nbr < 0 && size++)
 	{
 		tmp = -nbr;
-		nbr = -nbr;
-		size++;
 		sign = 1;
 	}
 	else
 		tmp = nbr;
-	str = (char*)malloc(sizeof(char) * size + 1);
+	if (!(str = (char*)malloc(sizeof(char) * size + 1)))
+		return (NULL);
 	str[size--] = '\0';
+	(tmp == 0) ? str[size] = '0' : str[size];
 	while (tmp > 0)
 	{
-		str[size--] = tmp % 10 + 48;
+		str[size--] = tmp % 10 + '0';
 		tmp /= 10;
 	}
-	if (sign)
-		str[size] = '-';
+	str[size] = (sign == 1) ? '-' : str[size];
 	return (str);
 }

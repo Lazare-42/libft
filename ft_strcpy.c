@@ -6,15 +6,15 @@
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/14 11:16:37 by lazrossi          #+#    #+#             */
-/*   Updated: 2017/04/14 16:18:46 by lazrossi         ###   ########.fr       */
+/*   Updated: 2017/04/19 12:13:47 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	**ft_strcpy(char **dest, char **src)
+char	*ft_strcpy(char *dest, char *src)
 {
 	int i;
 
-	i = 1;
+	i = 0;
 	while (src[i])
 	{
 		dest[i] = src[i];
@@ -22,5 +22,10 @@ char	**ft_strcpy(char **dest, char **src)
 	}
 	if (src[i] == '\0')
 		dest[i] = src[i];
+	while (dest[i])
+	{
+		dest[i] = '\0';
+		i++;
+	}
 	return (dest);
 }

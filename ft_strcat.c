@@ -6,7 +6,7 @@
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/15 13:05:56 by lazrossi          #+#    #+#             */
-/*   Updated: 2017/03/16 22:35:22 by lazrossi         ###   ########.fr       */
+/*   Updated: 2017/04/19 12:28:10 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strcat(char *dest, char *src)
 	int i;
 	int j;
 
-	i = 1;
+	i = 0;
 	j = 0;
 	while (dest[i])
 		i++;
