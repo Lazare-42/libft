@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/19 13:54:36 by lazrossi          #+#    #+#             */
-/*   Updated: 2017/04/20 18:46:30 by lazrossi         ###   ########.fr       */
+/*   Created: 2017/04/20 13:14:04 by lazrossi          #+#    #+#             */
+/*   Updated: 2017/04/20 13:15:54 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-void	ft_bzero(void *s, size_t n)
+int		ft_isascii(int c)
 {
-	unsigned char	*str;
-	int				i;
-
-	i = 0;
-	str = s;
-	while (n > 0)
-	{
-		str[i] = 0;
-		n--;
-		i++;
-	}
+	if (c >= 0 && c<= 127)
+		return (1);
+	return(0);
 }

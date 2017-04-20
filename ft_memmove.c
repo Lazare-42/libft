@@ -1,28 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/19 13:54:36 by lazrossi          #+#    #+#             */
-/*   Updated: 2017/04/20 18:46:30 by lazrossi         ###   ########.fr       */
+/*   Created: 2017/04/20 12:16:35 by lazrossi          #+#    #+#             */
+/*   Updated: 2017/04/20 12:17:14 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
-void	ft_bzero(void *s, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char	*str;
-	int				i;
+	char *dest_cpy;
+	char *src_cpy;
 
-	i = 0;
-	str = s;
-	while (n > 0)
+	src_cpy = (char*)src;
+	dest_cpy = (char*)dest;
+	if (src_cpy > dest_cpy)
 	{
-		str[i] = 0;
-		n--;
-		i++;
+		while (n > 0)
+		{
+			*dest_cpy++ = *src_cpy++;
+			n--;
+		}
 	}
+	else
+		while (n > 0)
+		{
+			dest_cpy = dest_cpy + n - 1;
+			src_cpy = src_cpy + n - 1;
+			while (n > 0)
+			{
+				*dest_cpy-- = *src_cpy--;
+				n--;
+			}
+		}
+	return (dest);
 }

@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/19 13:54:36 by lazrossi          #+#    #+#             */
-/*   Updated: 2017/04/20 18:46:30 by lazrossi         ###   ########.fr       */
+/*   Created: 2017/04/20 19:08:13 by lazrossi          #+#    #+#             */
+/*   Updated: 2017/04/20 20:16:31 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-void	ft_bzero(void *s, size_t n)
+char	*ft_strtrim(char const *s)
 {
-	unsigned char	*str;
-	int				i;
+	int i;
+	int j;
+	char *trimmed;
 
+	j = 0;
 	i = 0;
-	str = s;
-	while (n > 0)
+	if (s[i])
 	{
-		str[i] = 0;
-		n--;
-		i++;
+		while (s[i])
+		{
+			while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
+				i++;
+			j++;
+			i++;
+
+		}
+		
 	}
 }

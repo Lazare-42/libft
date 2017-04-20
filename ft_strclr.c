@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/19 13:54:36 by lazrossi          #+#    #+#             */
-/*   Updated: 2017/04/20 18:46:30 by lazrossi         ###   ########.fr       */
+/*   Created: 2017/04/20 14:28:32 by lazrossi          #+#    #+#             */
+/*   Updated: 2017/04/20 14:34:18 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_strclr(char *s)
 {
-	unsigned char	*str;
-	int				i;
-
-	i = 0;
-	str = s;
-	while (n > 0)
-	{
-		str[i] = 0;
-		n--;
-		i++;
-	}
+	if (s)
+		ft_bzero(s, ft_strlen(s));
 }

@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/19 13:54:36 by lazrossi          #+#    #+#             */
-/*   Updated: 2017/04/20 18:46:30 by lazrossi         ###   ########.fr       */
+/*   Created: 2017/04/20 15:10:37 by lazrossi          #+#    #+#             */
+/*   Updated: 2017/04/20 15:46:20 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char	*str;
-	int				i;
+	const unsigned char *s1_cpy;
+	const unsigned char *s2_cpy;
 
-	i = 0;
-	str = s;
-	while (n > 0)
-	{
-		str[i] = 0;
+	s1_cpy = s1;
+	s2_cpy = s2;
+	while (n > 0 && *s1_cpy == *s2_cpy)
+	{	
 		n--;
-		i++;
+		s1_cpy++;
+		s2_cpy++;
 	}
+	if (n != 0)
+		return (*s1_cpy - *s2_cpy);
+	else
+		return (0);
 }

@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/19 13:54:36 by lazrossi          #+#    #+#             */
-/*   Updated: 2017/04/20 18:46:30 by lazrossi         ###   ########.fr       */
+/*   Created: 2017/04/20 14:00:49 by lazrossi          #+#    #+#             */
+/*   Updated: 2017/04/20 18:30:03 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strnew(size_t size)
 {
-	unsigned char	*str;
-	int				i;
+	char 	*new;
+	int 	i;
 
 	i = 0;
-	str = s;
-	while (n > 0)
+	if(!(new = malloc(sizeof(char) * size + 1)))
+		return (NULL);
+	new[size] = '\0';
+	while (new[i])
 	{
-		str[i] = 0;
-		n--;
+		new[i] = '\0';
 		i++;
 	}
+	return (new);
 }
