@@ -6,7 +6,7 @@
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/20 15:10:37 by lazrossi          #+#    #+#             */
-/*   Updated: 2017/04/20 15:46:20 by lazrossi         ###   ########.fr       */
+/*   Updated: 2017/04/21 17:34:41 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	s1_cpy = s1;
 	s2_cpy = s2;
 	while (n > 0 && *s1_cpy == *s2_cpy)
-	{	
+	{
 		n--;
 		s1_cpy++;
 		s2_cpy++;

@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/20 13:37:10 by lazrossi          #+#    #+#             */
-/*   Updated: 2017/04/21 17:33:17 by lazrossi         ###   ########.fr       */
+/*   Created: 2017/04/21 17:23:11 by lazrossi          #+#    #+#             */
+/*   Updated: 2017/04/21 17:36:47 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+void	ft_putnbr(int n)
 {
-	void	*free_zone;
+	unsigned int s;
 
-	if (!(free_zone = malloc(size)))
-		return (NULL);
-	ft_bzero(free_zone, size);
-	return (free_zone);
+	s = 0;
+	if (n < 0)
+	{
+		ft_putchar('-');
+		s = -n;
+	}
+	else
+		s = n;
+	if (s / 10)
+		ft_putnbr(s / 10);
+	ft_putchar(s % 10 + '0');
 }
