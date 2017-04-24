@@ -13,19 +13,6 @@
 #include "stdlib.h"
 #include "libft.h"
 
-static int		ft_size(int nbr)
-{
-	int size;
-
-	size = 1;
-	while (nbr / 10)
-	{
-		size++;
-		nbr /= 10;
-	}
-	return (size);
-}
-
 char			*ft_itoa(int nbr)
 {
 	char			*str;
@@ -34,7 +21,7 @@ char			*ft_itoa(int nbr)
 	int				sign;
 
 	sign = 0;
-	size = ft_size(nbr);
+	size = ft_int_size(nbr);
 	if (nbr < 0 && size++)
 	{
 		tmp = -nbr;
