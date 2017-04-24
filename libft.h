@@ -6,7 +6,7 @@
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/19 17:51:24 by lazrossi          #+#    #+#             */
-/*   Updated: 2017/04/24 11:30:34 by lazrossi         ###   ########.fr       */
+/*   Updated: 2017/04/24 17:30:58 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 # include <stddef.h>
 
+typedef	struct		s_list
+{
+	void			*content;
+	size_t			content_size;
+	struct	s_list	*next;
+}					t_list;
 void	ft_putstr(char *str);
 char	*ft_itoa(int nbr);
 int		ft_atoi(const char *nptr);
@@ -64,4 +70,14 @@ char	*ft_strtrim(char const *s);
 void	ft_putend(char const *s);
 void	ft_putnbr(int n);
 char	**ft_strsplit(char const *str, char c);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char const *s, int fd);
+void	ft_putendl_fd(char const *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+t_list	*ft_lstnew(void const *content, size_t content_size);
+void  	ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
+void	ft_lstdel(t_list **alst, void (*del)(void *,size_t));
+void	ft_lstadd(t_list **alst, t_list *new);
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 #endif
