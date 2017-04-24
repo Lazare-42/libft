@@ -6,7 +6,7 @@
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/19 17:51:24 by lazrossi          #+#    #+#             */
-/*   Updated: 2017/04/24 17:30:58 by lazrossi         ###   ########.fr       */
+/*   Updated: 2017/04/24 17:52:00 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_putchar(char c);
 char	*ft_strdup(const char *src);
 char	*ft_strncpy(char *dest, char *src, unsigned int n);
 char	*ft_strcat(char *dest, char *src);
-int		ft_strlen(const char *str);
+size_t	ft_strlen(const char *str);
 char	*ft_strcpy(char *dest, char *src);
 char	*ft_strncat(char *dest, char *src, int nb);
 char	*strstr(const char *haystack, const char *needle);
