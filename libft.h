@@ -6,7 +6,7 @@
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/19 17:51:24 by lazrossi          #+#    #+#             */
-/*   Updated: 2017/04/21 17:50:15 by lazrossi         ###   ########.fr       */
+/*   Updated: 2017/04/24 11:30:34 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,8 @@ int		ft_strequ(char const *s1, char const *s2);
 int		ft_strnequ(char const *s1, char const *s2, size_t n);
 char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
-//char	*ft_strtrim(char const *s);
+char	*ft_strtrim(char const *s);
 void	ft_putend(char const *s);
 void	ft_putnbr(int n);
+char	**ft_strsplit(char const *str, char c);
 #endif
