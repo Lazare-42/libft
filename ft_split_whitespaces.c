@@ -6,13 +6,13 @@
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/24 09:49:14 by lazrossi          #+#    #+#             */
-/*   Updated: 2017/03/24 15:09:35 by lazrossi         ###   ########.fr       */
+/*   Updated: 2017/04/25 12:41:24 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int		count_words(char *str)
+static int		count_words(char *str)
 {
 	int i;
 	int wn;
@@ -37,7 +37,7 @@ int		count_words(char *str)
 	return (wn);
 }
 
-int		count_letters(char *str, int i)
+static int		count_letters(char *str, int i)
 {
 	int n;
 
@@ -50,7 +50,7 @@ int		count_letters(char *str, int i)
 	return (n);
 }
 
-char	**create_tab(char **tab, char *str)
+static char		**create_tab(char **tab, char *str)
 {
 	int i;
 	int j;
@@ -77,7 +77,7 @@ char	**create_tab(char **tab, char *str)
 	return (tab);
 }
 
-char	**ft_split_whitespaces(char *str)
+char			**ft_split_whitespaces(char *str)
 {
 	char **tab;
 

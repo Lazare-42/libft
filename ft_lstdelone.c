@@ -6,7 +6,7 @@
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/24 14:19:00 by lazrossi          #+#    #+#             */
-/*   Updated: 2017/04/24 15:16:43 by lazrossi         ###   ########.fr       */
+/*   Updated: 2017/04/25 09:42:02 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ void	ft_lstdelone(t_list **alst, void (*del)(void*, size_t))
 	if (del != NULL)
 		del((*alst)->content, (*alst)->content_size);
 	free(*alst);
-	*alst= NULL;
+	*alst = NULL;
 }

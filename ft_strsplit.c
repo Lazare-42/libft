@@ -5,18 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/24 11:42:38 by lazrossi          #+#    #+#             */
-/*   Updated: 2017/04/24 11:44:23 by lazrossi         ###   ########.fr       */
+/*   Created: 2017/04/25 12:46:56 by lazrossi          #+#    #+#             */
+/*   Updated: 2017/04/25 18:38:42 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-static	int		ft_count_separations(char *str, int c)
+static int	ft_count_separations(char *str, int c)
 {
-	int i;
-	int b;
-	int n;
+	int	i;
+	int	b;
+	int	n;
 
 	n = 0;
 	i = 0;
@@ -37,7 +37,7 @@ static	int		ft_count_separations(char *str, int c)
 	return (n);
 }
 
-static	int		ft_str_csize(char *str, int c)
+static int	ft_str_csize(char *str, int c)
 {
 	int i;
 	int n;
@@ -46,13 +46,13 @@ static	int		ft_str_csize(char *str, int c)
 	n = 0;
 	while (str[i] && str[i] != c)
 	{
-		i++;
-		n++;
+		++i;
+		++n;
 	}
 	return (n);
 }
 
-static	char	**ft_fill(char *str, char **tab, int c)
+static char	**ft_fill(char *str, char **tab, int c)
 {
 	int i;
 	int j;
@@ -80,7 +80,7 @@ static	char	**ft_fill(char *str, char **tab, int c)
 	return (tab);
 }
 
-char			**ft_strsplit(char const *str, char c)
+char		**ft_strsplit(char const *str, char c)
 {
 	char **tab;
 

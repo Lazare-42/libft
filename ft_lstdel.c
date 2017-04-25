@@ -6,14 +6,14 @@
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/24 15:24:49 by lazrossi          #+#    #+#             */
-/*   Updated: 2017/04/24 15:54:44 by lazrossi         ###   ########.fr       */
+/*   Updated: 2017/04/25 09:46:03 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-void	ft_lstdel(t_list **alst, void(*del)(void *, size_t))
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
 	t_list	*stock_next;
 

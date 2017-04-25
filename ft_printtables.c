@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_printtables.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/24 16:21:47 by lazrossi          #+#    #+#             */
-/*   Updated: 2017/04/25 09:47:00 by lazrossi         ###   ########.fr       */
+/*   Created: 2017/04/25 12:26:15 by lazrossi          #+#    #+#             */
+/*   Updated: 2017/04/25 12:28:34 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+void	ft_printtables(char **str)
 {
-	t_list *new;
-	t_list *tmp;
-	t_list *first;
+	int i;
 
-	if (!lst)
-		return (NULL);
-	new = ft_lstnew(lst->content, lst->content_size);
-	new = f(new);
-	first = new;
-	while (lst->next != NULL)
+	i = 0;
+	while (str[i])
 	{
-		lst = lst->next;
-		tmp = ft_lstnew(lst->content, lst->content_size);
-		tmp = f(tmp);
-		new->next = tmp;
-		new = new->next;
+		ft_putstr(str[i]);
+		i++;
 	}
-	return (first);
 }
