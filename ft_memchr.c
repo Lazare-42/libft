@@ -14,16 +14,16 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	const unsigned char *s_cpy;
+	unsigned char *s_cpy;
 
-	s_cpy = s;
+	s_cpy = (unsigned char*)s;
 	while (n > 0 && *s_cpy != (unsigned char)c)
 	{
 		n--;
 		s_cpy++;
 	}
 	if (n != 0)
-		return (&*(void*)s_cpy);
+		return (&*s_cpy);
 	else
 		return (NULL);
 }
