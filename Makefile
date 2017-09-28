@@ -77,12 +77,16 @@ SRC = ft_atoi.c \
 	  ft_tolower.c \
 	  ft_toupper.c \
 	  ./ft_putabs.c \
+<<<<<<< HEAD
 	  ./ft_advance_for_quotes.c \
 	  ./get_next_line.c  \
 	  ./ft_split_whitespaces_nokots.c \
 	  ./ft_str_isalpha.c \
 	  ./ft_tabdup.c \
 	  ./ft_tabsize.c \
+=======
+	  ./get_next_line.c  \
+>>>>>>> 68b815aa19fe365fb967eb7bc28947ac6ae0c73c
 
 OBJECT = $(SRC:.c=.o)
 

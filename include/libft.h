@@ -1,5 +1,9 @@
 /* ************************************************************************** */
+<<<<<<< HEAD
 
+=======
+/*                                                                            */
+>>>>>>> 68b815aa19fe365fb967eb7bc28947ac6ae0c73c
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
@@ -55,7 +59,10 @@ int					ft_isascii(int c);
 int					ft_isprint(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
+<<<<<<< HEAD
 int					ft_str_isalpha(char *str);
+=======
+>>>>>>> 68b815aa19fe365fb967eb7bc28947ac6ae0c73c
 void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
 char				*ft_strnew(size_t size);
@@ -87,6 +94,7 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int					ft_int_size(int nbr);
 char				**ft_split_whitespaces(char *str);
+<<<<<<< HEAD
 char				**ft_split_whitespaces_nokots(char *str);
 char				*ft_strjoinfree(char **s1, char **s2, char a);
 void				ft_putabs(char**str, char separator);
@@ -97,4 +105,9 @@ char				*ft_make_blocks_for_quotes(char *str, int *i);
 void				ft_tabdel(char **str);
 char				**ft_tabdup(char **str, int size);
 int					ft_tabsize(char **tab);
+=======
+char				*ft_strjoinfree(char **s1, char **s2, char a);
+void				ft_putabs(char**str);
+int					get_next_line(const int fd, char **line, char tofind);
+>>>>>>> 68b815aa19fe365fb967eb7bc28947ac6ae0c73c
 #endif
