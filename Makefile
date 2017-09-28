@@ -11,8 +11,10 @@
 # **************************************************************************** #
 
 NAME = libft.a
+
 SRC = ft_atoi.c \
 	  ft_bzero.c \
+	  ft_tabdel.c \
 	  ft_freetables.c \
 	  ft_int_size.c \
 	  ft_isalnum.c \
@@ -74,19 +76,32 @@ SRC = ft_atoi.c \
 	  ft_strtrim.c \
 	  ft_tolower.c \
 	  ft_toupper.c \
+	  ./ft_putabs.c \
+	  ./ft_advance_for_quotes.c \
+	  ./get_next_line.c  \
+	  ./ft_split_whitespaces_nokots.c \
+	  ./ft_str_isalpha.c \
+	  ./ft_tabdup.c \
+	  ./ft_tabsize.c \
 
 OBJECT = $(SRC:.c=.o)
+
+CLEAN = /bin/rm -f
+
+CC = gcc -Wall -Wextra -Werror -c 
+
+ARCH = ar rc
 
 all: $(NAME)
 
 $(NAME):  
-	gcc -Wall -Wextra -Werror -c $(SRC)
-	ar rc $(NAME) $(OBJECT)
+	@- $(CC) $(SRC)
+	@- $(ARCH) $(NAME) $(OBJECT)
 
 clean: 
-	/bin/rm -f $(OBJECT)
+	@-$(CLEAN) $(OBJECT)
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@-$(CLEAN) $(NAME)
 
 re: fclean all
