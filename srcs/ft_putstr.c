@@ -6,22 +6,13 @@
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/19 14:01:26 by lazrossi          #+#    #+#             */
-/*   Updated: 2017/04/19 14:02:05 by lazrossi         ###   ########.fr       */
+/*   Updated: 2017/09/06 19:40:58 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 void	ft_putstr(char *str)
 {
-	int i;
-
-	i = 0;
-	if (str == NULL)
-		return ;
-	while (str[i])
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
+	write(1, str, ft_strlen(str));
 }

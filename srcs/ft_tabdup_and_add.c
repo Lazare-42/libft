@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_tabdup_and_add.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/24 12:03:33 by lazrossi          #+#    #+#             */
-/*   Updated: 2017/09/05 09:28:50 by lazrossi         ###   ########.fr       */
+/*   Created: 2017/12/18 14:02:18 by lazrossi          #+#    #+#             */
+/*   Updated: 2017/12/27 11:04:24 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+#include <stdlib.h>
 
-void	ft_putnbr_fd(int n, int fd)
+char	**ft_tabdup_and_add(char **tab, char *str)
 {
-	unsigned int s;
+	int		i;
+	int		size;
+	char	**new_tab;
 
-	s = 0;
-	if (n < 0)
+	i = 0;
+	new_tab = NULL;
+	size = ft_tabsize(tab) + 2;
+	if (!(new_tab = (char**)malloc(sizeof(char*) * size)))
+		return (NULL);
+	new_tab[size - 1] = NULL;
+	while (tab && tab[i])
 	{
-		ft_putchar_fd('-', fd);
-		s = -n;
+		if (!(new_tab[i] = ft_strdup(tab[i])))
+			return (NULL);
+		i++;
 	}
-	else
-		s = n;
-	if (s / 10)
-		ft_putnbr_fd(s / 10, fd);
-	ft_putchar_fd((s % 10 + '0'), fd);
+	if (!(new_tab[i] = ft_strdup(str)))
+		return (NULL);
+	return (new_tab);
 }

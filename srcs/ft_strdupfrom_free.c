@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strdupfrom_free.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/24 12:03:33 by lazrossi          #+#    #+#             */
-/*   Updated: 2017/09/05 09:28:50 by lazrossi         ###   ########.fr       */
+/*   Created: 2017/12/21 00:41:20 by lazrossi          #+#    #+#             */
+/*   Updated: 2017/12/21 01:28:18 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "../includes/libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+char	*ft_strdupfrom_free(const char **src, int from)
 {
-	unsigned int s;
+	char	*str;
 
-	s = 0;
-	if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		s = -n;
-	}
-	else
-		s = n;
-	if (s / 10)
-		ft_putnbr_fd(s / 10, fd);
-	ft_putchar_fd((s % 10 + '0'), fd);
+	str = ft_strdup(&(*src)[from]);
+	ft_memdel((void**)src);
+	return (str);
 }

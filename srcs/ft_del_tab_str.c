@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_del_tab_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/24 12:03:33 by lazrossi          #+#    #+#             */
-/*   Updated: 2017/09/05 09:28:50 by lazrossi         ###   ########.fr       */
+/*   Created: 2018/02/21 10:46:17 by lazrossi          #+#    #+#             */
+/*   Updated: 2018/02/21 11:35:56 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_del_tab_str(void ***tab, void **str)
 {
-	unsigned int s;
-
-	s = 0;
-	if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		s = -n;
-	}
-	else
-		s = n;
-	if (s / 10)
-		ft_putnbr_fd(s / 10, fd);
-	ft_putchar_fd((s % 10 + '0'), fd);
+	ft_tabdel(tab);
+	ft_memdel(str);
 }

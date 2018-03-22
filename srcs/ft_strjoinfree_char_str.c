@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strjoinfree_str_char.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/24 12:03:33 by lazrossi          #+#    #+#             */
-/*   Updated: 2017/09/05 09:28:50 by lazrossi         ###   ########.fr       */
+/*   Created: 2017/12/17 16:18:54 by lazrossi          #+#    #+#             */
+/*   Updated: 2017/12/28 16:31:43 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+#include <stdlib.h>
 
-void	ft_putnbr_fd(int n, int fd)
+char	*ft_strjoinfree_char_str(char s2, char **s1)
 {
-	unsigned int s;
+	char	*str;
+	int		len;
 
-	s = 0;
-	if (n < 0)
+	str = NULL;
+	len = 0;
+	if (*s1 && s2)
 	{
-		ft_putchar_fd('-', fd);
-		s = -n;
+		len = ft_strlen(*s1) + 1;
+		if (!(str = ft_strnew(len)))
+			return (NULL);
+		str[0] = s2;
+		if (!(ft_strcpy(&str[1], *s1)))
+			return (NULL);
+		ft_memdel((void*)s1);
+		return (str);
 	}
-	else
-		s = n;
-	if (s / 10)
-		ft_putnbr_fd(s / 10, fd);
-	ft_putchar_fd((s % 10 + '0'), fd);
+	return (NULL);
 }

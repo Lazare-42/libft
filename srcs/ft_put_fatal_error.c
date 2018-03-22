@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_put_fatal_error.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/24 12:03:33 by lazrossi          #+#    #+#             */
-/*   Updated: 2017/09/05 09:28:50 by lazrossi         ###   ########.fr       */
+/*   Created: 2018/02/21 11:37:35 by lazrossi          #+#    #+#             */
+/*   Updated: 2018/02/21 11:37:37 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "./../includes/libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+int		ft_put_fatal_error(char *str)
 {
-	unsigned int s;
-
-	s = 0;
-	if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		s = -n;
-	}
-	else
-		s = n;
-	if (s / 10)
-		ft_putnbr_fd(s / 10, fd);
-	ft_putchar_fd((s % 10 + '0'), fd);
+	ft_putstr_fd("Exiting for the following reason : ", 2);
+	ft_putstr_fd(str, 2);
+	ft_putchar_fd('\n', 2);
+	return (0);
 }

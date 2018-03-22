@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_debug.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/24 12:03:33 by lazrossi          #+#    #+#             */
-/*   Updated: 2017/09/05 09:28:50 by lazrossi         ###   ########.fr       */
+/*   Created: 2018/02/21 11:36:19 by lazrossi          #+#    #+#             */
+/*   Updated: 2018/02/21 11:36:21 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "./../includes/libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	debug(void)
 {
-	unsigned int s;
+	static int nbr = 0;
 
-	s = 0;
-	if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		s = -n;
-	}
-	else
-		s = n;
-	if (s / 10)
-		ft_putnbr_fd(s / 10, fd);
-	ft_putchar_fd((s % 10 + '0'), fd);
+	nbr++;
+	ft_putstr("Debug");
+	ft_putnbr(nbr);
+	ft_putchar('\n');
 }

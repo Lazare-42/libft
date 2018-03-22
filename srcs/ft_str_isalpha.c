@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_str_isalpha.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/24 12:03:33 by lazrossi          #+#    #+#             */
-/*   Updated: 2017/09/05 09:28:50 by lazrossi         ###   ########.fr       */
+/*   Created: 2017/12/28 16:31:25 by lazrossi          #+#    #+#             */
+/*   Updated: 2017/12/28 16:31:28 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+int	ft_str_isalpha(char *str)
 {
-	unsigned int s;
+	int i;
 
-	s = 0;
-	if (n < 0)
+	i = 0;
+	while (str[i])
 	{
-		ft_putchar_fd('-', fd);
-		s = -n;
+		if (!ft_isalpha(str[i]))
+			return (0);
+		i++;
 	}
-	else
-		s = n;
-	if (s / 10)
-		ft_putnbr_fd(s / 10, fd);
-	ft_putchar_fd((s % 10 + '0'), fd);
+	return (1);
 }
