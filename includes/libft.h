@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stddef.h>
+# include <inttypes.h>
 
 # include "get_next_line.h"
 
@@ -27,9 +28,14 @@ typedef	struct		s_list
 void				ft_putstr(char *str);
 int					ft_str_is_printable(char *str);
 char				*ft_itoa(int nbr);
+char				*ft_ltoa(intmax_t nbr);
+char				*ft_ftoa(double nbr);
 int					ft_atoi(const char *str);
+double				ft_atof(const char *nptr);
 void				ft_putchar(char c);
 char				*ft_strdup(const char *s1);
+char				*ft_strndup(const char *s1, size_t n);
+char				*ft_strndup_free(char **src, size_t n);
 char				*ft_strncpy(char *dest, char *src, unsigned int n);
 char				*ft_strcat(char *dest, char *src);
 size_t				ft_strlen(const char *str);
@@ -65,6 +71,7 @@ void				ft_strclr(char *s);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 void				*ft_memchr(const void *s, int c, size_t n);
 void				ft_striter(char *s, void (*f)(char *));
+void				ft_mystriter(char **s, char (*f)(char));
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 char				*ft_strmap(char const *s, char (*f)(char));
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
@@ -87,6 +94,7 @@ void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int					ft_int_size(int nbr);
+int					ft_double_size(double nbr);
 char				**ft_split_whitespaces(char *str);
 char				**ft_split_char(char *str, char c);
 char				**ft_split_whitespaces_nokots(char *str);
@@ -105,11 +113,23 @@ char				**ft_tabdup_add_free(char ***tab, char **str, char which);
 char				*ft_strjoinfree_str_char(char **s1, char s2);
 char				*ft_strjoinfree_one(char **s1, char *s2, char where);
 char				*ft_strjoinfree_char_str(char s2, char **s1);
+char				*ft_joinfree_heapstr_stackstr(char **s1, char *s2,
+		char where);
 char				*ft_strdupfrom_free(const char **str, int from);
 char				**ft_tab_replacestr(char ***tab, char **str, char *cmp);
 int					int_ft_putchar(int c);
 void				debug();
 int					ft_put_fatal_error(char *str);
+void				*ft_put_error_return_null(char *error_msg,
+		char *function_name);
 void				ft_myexit(char	*str);
 void				ft_del_tab_str(void	***tab, void	**str);
+int					ft_isnan(double x);
+int					ft_isinf(double x);
+char				*ft_s_base_converter(int base_size, intmax_t number);
+char				*ft_u_base_converter(int base_size,
+		uintmax_t number, int sizeof_var);
+char				ft_mins_to_caps(char c);
+void				*ft_symetric_byte_swap(void	*ptr, int size);
+int 				ft_check_endianness(void);
 #endif

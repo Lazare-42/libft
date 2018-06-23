@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup_free.c                                   :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/21 00:36:25 by lazrossi          #+#    #+#             */
-/*   Updated: 2017/12/21 00:39:56 by lazrossi         ###   ########.fr       */
+/*   Created: 2017/03/18 00:20:27 by lazrossi          #+#    #+#             */
+/*   Updated: 2017/04/21 15:58:11 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strdupfrom_free(char *str, int i)
-{
-	char	*dest;
+#include <stdlib.h>
+#include "../includes/libft.h"
 
-	dest = NULL;
-	if (str[i])
-		if (!(str = ft_strdup(&str[i])))
-			return (NULL);
-	ft_memdel((void**)str);
+char	*ft_strndup(const char *src, size_t n)
+{
+	char	*str;
+	size_t	i;
+
+	i = 0;
+	if (!(str = (char*)malloc(sizeof(*str) * n + 1)))
+		return (0);
+	str[n] = 0;
+	while (src[i] && i <= n)
+	{
+		str[i] = src[i];
+		i++;
+	}
 	return (str);
 }

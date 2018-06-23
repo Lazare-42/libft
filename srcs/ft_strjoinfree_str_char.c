@@ -25,11 +25,13 @@ char	*ft_strjoinfree_str_char(char **s1, char s2)
 		len = ft_strlen(*s1) + 1;
 		if (!(str = ft_strnew(len)))
 			return (NULL);
-		if (!(ft_strcpy(str, *s1)))
-			return (NULL);
-		str[len - 1] = s2;
 		if (*s1)
+		{
+			if (!(ft_strcpy(str, *s1)))
+				return (NULL);
 			ft_memdel((void*)s1);
+		}
+		str[len - 1] = s2;
 		return (str);
 	}
 	return (NULL);
