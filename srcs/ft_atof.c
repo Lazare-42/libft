@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/18 09:29:19 by lazrossi          #+#    #+#             */
-/*   Updated: 2018/04/19 15:19:51 by lazrossi         ###   ########.fr       */
+/*   Created: 2018/06/25 18:19:48 by lazrossi          #+#    #+#             */
+/*   Updated: 2018/06/25 18:28:39 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ static double	double_it(const char *nptr, double number)
 
 double			ft_atof(const char *nptr)
 {
-	int i;
-	int sign;
-	double number;
+	int		i;
+	int		sign;
+	double	number;
 
 	number = 0;
 	sign = 1;

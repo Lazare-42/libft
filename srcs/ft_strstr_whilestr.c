@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/18 00:20:27 by lazrossi          #+#    #+#             */
-/*   Updated: 2018/06/26 14:03:57 by lazrossi         ###   ########.fr       */
+/*   Created: 2017/04/19 14:32:30 by lazrossi          #+#    #+#             */
+/*   Updated: 2018/07/07 16:21:36 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "../includes/libft.h"
 
-char	*ft_strdup(const char *src)
+char	*ft_strstr_whilestr(char *haystack, char *needle, char *go)
 {
-	char	*str;
-	int		i;
+	int i;
+	int j;
 
 	i = 0;
-	if (!src)
+	j = 0;
+	if (needle[j] == '\0' || !ft_strchr(go, needle[j]))
 		return (NULL);
-	if (!(str = (char*)malloc(sizeof(*str) * (ft_strlen(src) + 1))))
-		return (0);
-	str[ft_strlen(src)] = 0;
-	while (src[i])
+	while (haystack[i] && ft_strchr(go, haystack[i]))
 	{
-		str[i] = src[i];
+		j = 0;
+		while (needle[j] && ft_strchr(go, needle[j])
+				&& needle[j] != haystack[i])
+			j++;
+		if (needle[j] && haystack[i] == needle[j])
+			return (&(haystack[i]));
 		i++;
 	}
-	return (str);
+	return (NULL);
 }

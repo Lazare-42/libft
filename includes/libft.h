@@ -6,7 +6,7 @@
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 15:27:37 by lazrossi          #+#    #+#             */
-/*   Updated: 2018/02/21 10:48:25 by lazrossi         ###   ########.fr       */
+/*   Updated: 2018/07/07 15:36:45 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 
 # include <stddef.h>
 # include <inttypes.h>
+# include "printf.h"
 
-# include "get_next_line.h"
+# define BUFF_SIZE 4096
 
 typedef	struct		s_list
 {
@@ -26,10 +27,10 @@ typedef	struct		s_list
 }					t_list;
 
 void				ft_putstr(char *str);
+char				*ft_strdiff(char *str, char c, int size);
 int					ft_str_is_printable(char *str);
 char				*ft_itoa(int nbr);
 char				*ft_ltoa(intmax_t nbr);
-char				*ft_ftoa(double nbr);
 int					ft_atoi(const char *str);
 double				ft_atof(const char *nptr);
 void				ft_putchar(char c);
@@ -41,12 +42,14 @@ char				*ft_strcat(char *dest, char *src);
 size_t				ft_strlen(const char *str);
 char				*ft_strcpy(char *dest, char *src);
 char				*ft_strncat(char *dest, char *src, int nb);
-char				*strstr(const char *haystack, const char *needle);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strnstr(const char *haystack, \
 		const char *needle, size_t n);
 char				*ft_strstr(const char *haystack, const char *needle);
+char				*ft_strstrchr(char *haystack, char *needle, char stop);
+char				*ft_strstrstr(char *haystack, char *needle, char *stop);
+char				*ft_strstr_whilestr(char *haystack, char *needle, char *go);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 void				*ft_memccpy(void *dest, const void *src, int c, size_t n);
@@ -63,6 +66,7 @@ int					ft_isprint(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 int					ft_str_isalpha(char *str);
+void				ft_str_mins_to_caps(char *c);
 void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
 char				*ft_strnew(size_t size);
@@ -124,12 +128,11 @@ void				*ft_put_error_return_null(char *error_msg,
 		char *function_name);
 void				ft_myexit(char	*str);
 void				ft_del_tab_str(void	***tab, void	**str);
-int					ft_isnan(double x);
-int					ft_isinf(double x);
 char				*ft_s_base_converter(int base_size, intmax_t number);
 char				*ft_u_base_converter(int base_size,
 		uintmax_t number, int sizeof_var);
 char				ft_mins_to_caps(char c);
 void				*ft_symetric_byte_swap(void	*ptr, int size);
-int 				ft_check_endianness(void);
+int					ft_check_endianness(void);
+char				*print_bits(void *ptr, int size);
 #endif

@@ -1,33 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_printbits.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/18 00:20:27 by lazrossi          #+#    #+#             */
-/*   Updated: 2018/06/26 14:03:57 by lazrossi         ###   ########.fr       */
+/*   Created: 2018/07/04 18:22:51 by lazrossi          #+#    #+#             */
+/*   Updated: 2018/07/07 15:29:54 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "../includes/libft.h"
 
-char	*ft_strdup(const char *src)
+char	*print_bits(void *ptr, int size)
 {
-	char	*str;
 	int		i;
+	int		bit_nbr;
+	char	*result;
+	char	*test;
+	int		j;
 
-	i = 0;
-	if (!src)
+	i = 7;
+	j = 0;
+	bit_nbr = 0;
+	test = ptr;
+	if (!(result = ft_strnew(size * 10)))
 		return (NULL);
-	if (!(str = (char*)malloc(sizeof(*str) * (ft_strlen(src) + 1))))
-		return (0);
-	str[ft_strlen(src)] = 0;
-	while (src[i])
+	while (j < size)
 	{
-		str[i] = src[i];
-		i++;
+		result[bit_nbr] = (test[j] & (1 << i)) ? '1' : '0';
+		bit_nbr++;
+		(i == 4) ? result[bit_nbr] = ' ' : 0;
+		(i == 4) ? bit_nbr++ : 0;
+		(i == 0) ? result[bit_nbr] = ' ' : 0;
+		(i == 0) ? j++ : 0;
+		(i == 0) ? bit_nbr++ : 0;
+		(i == 0) ? i = 8 : 0;
+		i--;
 	}
-	return (str);
+	return (result);
 }

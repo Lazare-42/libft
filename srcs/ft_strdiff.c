@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strdiff.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/18 00:20:27 by lazrossi          #+#    #+#             */
-/*   Updated: 2018/06/26 14:03:57 by lazrossi         ###   ########.fr       */
+/*   Created: 2018/07/03 19:27:05 by lazrossi          #+#    #+#             */
+/*   Updated: 2018/07/07 15:30:32 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "../includes/libft.h"
 
-char	*ft_strdup(const char *src)
+char	*ft_strdiff(char *str, char c, int size)
 {
-	char	*str;
-	int		i;
+	int i;
 
 	i = 0;
-	if (!src)
-		return (NULL);
-	if (!(str = (char*)malloc(sizeof(*str) * (ft_strlen(src) + 1))))
-		return (0);
-	str[ft_strlen(src)] = 0;
-	while (src[i])
-	{
-		str[i] = src[i];
+	while (str[i] && str[i] == c && size--)
 		i++;
-	}
-	return (str);
+	if (!str[i] || !size)
+		return (NULL);
+	else
+		return (&str[i]);
 }

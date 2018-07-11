@@ -14,7 +14,6 @@
 
 # define GET_NEXT_LINE_H
 
-# define BUFF_SIZE 2056
 
 # include <unistd.h>
 
