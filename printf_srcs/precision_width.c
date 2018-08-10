@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+#include "../includes/printf.h"
 
 void	apply_flag_padding(t_printf *argument_specs, t_str *argument_str)
 {

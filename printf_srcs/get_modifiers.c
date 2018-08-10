@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+#include "../includes/printf.h"
 
 /*
 ** flag - which left aligns output and flag 0 which prepends 0 in front

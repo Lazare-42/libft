@@ -118,7 +118,14 @@ SRCS =			ft_advance_for_quotes.c \
       			int_ft_putchar.c \
 				 ft_printf.c \
 				get_modifiers.c \
-				stack_management.c \
+				parsing.c \
+				precision_width.c \
+				base_converter.c \
+				wide_char.c \
+				store_nbr_data.c \
+				store_char_data.c \
+				ft_printf.c \
+				get_modifiers.c \
 				parsing.c \
 				precision_width.c \
 				base_converter.c \
@@ -126,6 +133,15 @@ SRCS =			ft_advance_for_quotes.c \
 				store_nbr_data.c \
 				store_char_data.c \
 				bonus_colors_formatting.c \
+				get_nbr_len.c \
+				base_converter_len_output.c \
+				fill_str_update_index.c \
+				bonus_fd.c \
+				ft_print_continued.c \
+				get_char_len.c \
+				width.c \
+				bonus_colors_formatting.c \
+				ft_decompose_color.c \
 
 # CC = gcc -Wall -Wextra -Werror -c -g
 

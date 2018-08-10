@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/printf.h"
 #include "../includes/libft.h"
 
 const char	*store_string(const char *format, t_str *argument_str)

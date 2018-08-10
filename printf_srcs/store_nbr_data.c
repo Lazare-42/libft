@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+#include "../includes/printf.h"
 
 static int	type_to_int_base(char type)
 {

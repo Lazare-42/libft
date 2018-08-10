@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/printf.h"
 #include "../includes/libft.h"
 
 void		store_unicode(wint_t data, int precision, t_str *argument_str)

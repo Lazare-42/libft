@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+#include "../includes/printf.h"
 #include <inttypes.h>
 #include <stdio.h>
 
