@@ -90,7 +90,7 @@ int			ft_printf(const char *restrict format, ...)
 	t_str		argument_str;
 
 	return_val = -1;
-	if (!(format))
+	if (NULL == (format))
 	{
 		ft_putstr_fd("Please stop fooling around with my ft_printf.", 2);
 		return (-1);
